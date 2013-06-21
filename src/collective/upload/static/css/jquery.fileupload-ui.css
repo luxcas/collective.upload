@@ -51,6 +51,15 @@
   display: block;
 }
 
+/* Fix for Chrome */
+.fileupload-buttonbar .fileinput-button input {
+position:relative;
+width:100px;
+height:30px;
+display:block;
+margin-top:-30px;}
+
+
 /* Fix for IE 6: */
 * html .fileinput-button {
   line-height: 24px;
