@@ -109,13 +109,15 @@ class Media_Uploader(grok.View):
                 if portal_type == 'File':
                     if IATFile.providedBy(newfile):
                         newfile.setFile(data, filename=filename)
-                    else:
-                        newfile.file = wrapped_data
                         # Set content type for files
-                        if newfile.getFile().getContentType() != 'application/pdf':
+                        import pdb; pdb.set_trace()
+                        if newfile.getFile().getContentType() != content_type:
                             newfile.getFile().setContentType(content_type)
                         else:
                             pass
+                    else:
+                        newfile.file = wrapped_data
+                        
                 elif portal_type == 'Image':
                     if IATImage.providedBy(newfile):
                         newfile.setImage(data, filename=filename)
