@@ -110,7 +110,6 @@ class Media_Uploader(grok.View):
                     if IATFile.providedBy(newfile):
                         newfile.setFile(data, filename=filename)
                         # Set content type for files
-                        import pdb; pdb.set_trace()
                         if newfile.getFile().getContentType() != content_type:
                             newfile.getFile().setContentType(content_type)
                         else:
